@@ -18,8 +18,10 @@
         </activity>
         <activity
             android:name=".part1.Part1Activity"
-            android:label="@string/title_activity_part1" >
-        </activity>
+            android:label="@string/title_activity_part1" />
+        <activity
+            android:name=".part2.Part2Activity"
+            android:label="@string/title_activity_part2" />
     </application>
 
 </manifest>

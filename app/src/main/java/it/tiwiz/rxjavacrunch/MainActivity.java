@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import it.tiwiz.rxjavacrunch.part1.Part1Activity;
+import it.tiwiz.rxjavacrunch.part2.Part2Activity;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
@@ -22,6 +23,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     private void wireUi() {
         setTapListener(R.id.btnPart1);
+        setTapListener(R.id.btnPart2);
     }
 
     private void setTapListener(int viewId) {
@@ -39,6 +41,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         switch (viewId) {
             case R.id.btnPart1:
                 launchIntent = new Intent(this, Part1Activity.class);
+                break;
+            case R.id.btnPart2:
+                launchIntent = new Intent(this, Part2Activity.class);
                 break;
         }
 
