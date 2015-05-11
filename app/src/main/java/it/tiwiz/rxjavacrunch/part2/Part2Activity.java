@@ -14,6 +14,7 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func1;
+import rx.functions.Func2;
 
 public class Part2Activity extends ActionBarActivity {
 
@@ -64,6 +65,17 @@ public class Part2Activity extends ActionBarActivity {
         }
     };
 
+
+    /**
+     * We create a function that merges all the received strings together and emits a single one
+     */
+    Func2<String, String, String> mergeRoutine = new Func2<String, String, String>() {
+        @Override
+        public String call (String s, String s1) {
+            return String.format("%s %s",s, s1);
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +104,7 @@ public class Part2Activity extends ActionBarActivity {
         Observable.just(manyWordList)
                 .observeOn(AndroidSchedulers.mainThread())
                 .flatMap(getUrls)
+                .reduce(mergeRoutine)
                 .subscribe(toastOnNextAction);
 
     }
