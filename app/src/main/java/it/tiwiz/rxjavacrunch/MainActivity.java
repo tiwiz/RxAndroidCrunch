@@ -9,6 +9,7 @@ import android.view.View;
 
 import it.tiwiz.rxjavacrunch.part1.Part1Activity;
 import it.tiwiz.rxjavacrunch.part2.Part2Activity;
+import it.tiwiz.rxjavacrunch.part3.Part3Activity;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
@@ -24,6 +25,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private void wireUi() {
         setTapListener(R.id.btnPart1);
         setTapListener(R.id.btnPart2);
+        setTapListener(R.id.btnPart3);
     }
 
     private void setTapListener(int viewId) {
@@ -44,6 +46,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.btnPart2:
                 launchIntent = new Intent(this, Part2Activity.class);
+                break;
+            case R.id.btnPart3:
+                launchIntent = new Intent(this, Part3Activity.class);
                 break;
         }
 
