@@ -3,6 +3,7 @@ package it.tiwiz.rxjavacrunch.part1;
 import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -13,7 +14,7 @@ import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 
-public class Part1Activity extends ActionBarActivity {
+public class Part1Activity extends AppCompatActivity {
 
     TextView txtPart1;
     Context context;

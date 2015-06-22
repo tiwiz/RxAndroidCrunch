@@ -3,6 +3,7 @@ package it.tiwiz.rxjavacrunch.part2;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +17,7 @@ import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.functions.Func2;
 
-public class Part2Activity extends ActionBarActivity {
+public class Part2Activity extends AppCompatActivity {
 
     TextView txtPart1;
     Context context;
