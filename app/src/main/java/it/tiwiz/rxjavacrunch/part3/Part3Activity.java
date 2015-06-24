@@ -38,17 +38,16 @@ public class Part3Activity extends AppCompatActivity {
         /**
          * Creates an {@link Observable} that will be emitted only once
          */
-        Observable<String> singleObservable = Observable.just("Hello, World!");
-
-        singleObservable.observeOn(AndroidSchedulers.mainThread())
+        Observable.just("Hello, World!")
+                .observeOn(AndroidSchedulers.mainThread())
                 .map(String::toUpperCase)
                 .subscribe(txtPart1::setText);
 
         /**
          * Emits one item at the time, taking them from any {@link java.util.Collection}
          */
-        Observable<String> oneByOneObservable = Observable.from(manyWords);
-        oneByOneObservable.observeOn(AndroidSchedulers.mainThread())
+        Observable.from(manyWords)
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(message -> Toast.makeText(context, message, Toast.LENGTH_SHORT).show());
 
         Observable.just(manyWordList)
