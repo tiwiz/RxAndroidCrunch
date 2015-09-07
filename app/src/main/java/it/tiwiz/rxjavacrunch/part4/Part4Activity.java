@@ -1,17 +1,14 @@
 package it.tiwiz.rxjavacrunch.part4;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import it.tiwiz.rxjavacrunch.R;
-import it.tiwiz.rxjavacrunch.part4.model.GitHubUser;
 import it.tiwiz.rxjavacrunch.part4.service.GitHubService;
 import it.tiwiz.rxjavacrunch.part4.service.ServiceFactory;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 public class Part4Activity extends AppCompatActivity {
@@ -33,5 +30,16 @@ public class Part4Activity extends AppCompatActivity {
                 }, throwable -> {
                     Log.d(TAG, "Error: " + throwable.getMessage());
                 });
+
+       gitHubService.getRepoData("tiwiz")
+               .flatMap(Observable::from)
+               .subscribeOn(Schedulers.io())
+               .observeOn(AndroidSchedulers.mainThread())
+               .subscribe(repo -> {
+                   Log.d(TAG, repo.getFull_name() + " - " + repo.getOwner().getLogin());
+               }, throwable -> {
+                   Log.d(TAG, "Error: " + throwable.getMessage());
+               });
+
     }
 }

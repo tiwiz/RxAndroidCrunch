@@ -9,7 +9,9 @@ public class ServiceFactory {
 
     public static <T> T createServiceFrom(final Class<T> serviceClass, String endpoint) {
 
-        RestAdapter adapter = new RestAdapter.Builder().setEndpoint(endpoint).build();
+        RestAdapter adapter = new RestAdapter.Builder()
+                .setEndpoint(endpoint)
+                .build();
 
         T service = adapter.create(serviceClass);
 
