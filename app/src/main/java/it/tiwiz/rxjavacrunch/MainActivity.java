@@ -11,6 +11,7 @@ import android.view.View;
 import it.tiwiz.rxjavacrunch.part1.Part1Activity;
 import it.tiwiz.rxjavacrunch.part2.Part2Activity;
 import it.tiwiz.rxjavacrunch.part3.Part3Activity;
+import it.tiwiz.rxjavacrunch.part4.Part4Activity;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setTapListener(R.id.btnPart1);
         setTapListener(R.id.btnPart2);
         setTapListener(R.id.btnPart3);
+        setTapListener(R.id.btnPart4);
     }
 
     private void setTapListener(int viewId) {
@@ -50,6 +52,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnPart3:
                 launchIntent = new Intent(this, Part3Activity.class);
+                break;
+            case R.id.btnPart4:
+                launchIntent = new Intent(this, Part4Activity.class);
                 break;
         }
 

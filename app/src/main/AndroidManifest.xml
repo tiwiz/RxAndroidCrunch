@@ -25,6 +25,10 @@
         <activity
             android:name=".part3.Part3Activity"
             android:label="@string/title_activity_part3" />
+        <activity
+            android:name=".part4.Part4Activity"
+            android:label="@string/title_activity_main4" >
+        </activity>
     </application>
 
 </manifest>
