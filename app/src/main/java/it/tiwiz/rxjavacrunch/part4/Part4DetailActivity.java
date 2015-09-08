@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import it.tiwiz.rxjavacrunch.R;
+import it.tiwiz.rxjavacrunch.part4.utils.GitHubRepoAdapter;
+import it.tiwiz.rxjavacrunch.part4.utils.GitHubWrapper;
 
 public class Part4DetailActivity extends AppCompatActivity {
 
@@ -35,8 +37,12 @@ public class Part4DetailActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
+        GitHubRepoAdapter adapter = new GitHubRepoAdapter();
+        GitHubWrapper.getReposForUsersInto(requestedUser, adapter);
+
         reposList = (RecyclerView) findViewById(R.id.reposList);
         reposList.setLayoutManager(layoutManager);
+        reposList.setAdapter(adapter);
     }
 
 }
