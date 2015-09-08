@@ -7,4 +7,5 @@
     <string name="title_activity_part2">Part2Activity</string>
     <string name="title_activity_part3">Part3Activity</string>
     <string name="title_activity_main4">Retrofit test</string>
+    <string name="title_activity_part4_detail">Part4DetailActivity</string>
 </resources>

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="it.tiwiz.rxjavacrunch" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -30,6 +30,14 @@
         <activity
             android:name=".part4.Part4Activity"
             android:label="@string/title_activity_main4" >
+        </activity>
+        <activity
+            android:name=".part4.Part4DetailActivity"
+            android:label="@string/title_activity_part4_detail"
+            android:parentActivityName=".part4.Part4Activity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.tiwiz.rxjavacrunch.part4.Part4Activity" />
         </activity>
     </application>
 

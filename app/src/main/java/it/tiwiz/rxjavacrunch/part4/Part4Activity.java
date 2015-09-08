@@ -11,11 +11,12 @@ import it.tiwiz.rxjavacrunch.part4.service.GitHubService;
 import it.tiwiz.rxjavacrunch.part4.service.ServiceFactory;
 import it.tiwiz.rxjavacrunch.part4.utils.GitHubUserWrapper;
 import it.tiwiz.rxjavacrunch.part4.utils.GitHubUsersAdapter;
+import it.tiwiz.rxjavacrunch.part4.utils.OnRVItemClickListener;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-public class Part4Activity extends AppCompatActivity {
+public class Part4Activity extends AppCompatActivity implements OnRVItemClickListener{
 
     private final static String TAG = "RxAndroidCrunch";
     private RecyclerView recyclerView;
@@ -46,7 +47,7 @@ public class Part4Activity extends AppCompatActivity {
 //                   Log.d(TAG, "Error: " + throwable.getMessage());
 //               });
 
-        GitHubUsersAdapter adapter = new GitHubUsersAdapter();
+        GitHubUsersAdapter adapter = new GitHubUsersAdapter(this);
         GitHubUserWrapper.getUsersInto(adapter);
         recyclerView = (RecyclerView) findViewById(R.id.usersList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -54,5 +55,10 @@ public class Part4Activity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
+    }
+
+    @Override
+    public void onItemClicked(String username) {
+        startActivity(Part4DetailActivity.from(this, username));
     }
 }
