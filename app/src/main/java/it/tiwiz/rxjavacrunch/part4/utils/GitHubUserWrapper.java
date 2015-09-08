@@ -1,13 +1,9 @@
 package it.tiwiz.rxjavacrunch.part4.utils;
 
-import java.util.List;
-
-import it.tiwiz.rxjavacrunch.part4.model.GitHubUser;
 import it.tiwiz.rxjavacrunch.part4.service.GitHubService;
 import it.tiwiz.rxjavacrunch.part4.service.ServiceFactory;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 /**

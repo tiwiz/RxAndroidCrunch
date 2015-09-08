@@ -28,7 +28,7 @@ public class Part4DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_part4_detail);
-        
+
         requestedUser = getIntent().getStringExtra(USER_KEY);
         setTitle(requestedUser);
 
