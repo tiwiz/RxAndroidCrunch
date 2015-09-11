@@ -1,8 +1,5 @@
 package it.tiwiz.rxjavacrunch.part4.model;
 
-/**
- *
- */
 public class GitHubUser {
 
     String login;

@@ -12,9 +12,6 @@ import java.util.List;
 import it.tiwiz.rxjavacrunch.R;
 import it.tiwiz.rxjavacrunch.part4.model.GitHubRepo;
 
-/**
- *
- */
 public class GitHubRepoAdapter extends RecyclerView.Adapter<GitHubRepoAdapter.RepoHolder>{
 
     List<GitHubRepo> repos = new ArrayList<>();

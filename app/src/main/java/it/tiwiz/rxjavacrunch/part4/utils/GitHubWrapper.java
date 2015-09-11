@@ -19,7 +19,6 @@ public class GitHubWrapper {
 
         Observable.from(interestingUsers)
                 .flatMap(gitHubService::getUserData)
-                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(adapter::addUser);
     }
@@ -30,7 +29,6 @@ public class GitHubWrapper {
 
         gitHubService.getRepoData(username)
                .flatMap(Observable::from)
-               .subscribeOn(Schedulers.io())
                .observeOn(AndroidSchedulers.mainThread())
                .subscribe(adapter::addRepo);
     }

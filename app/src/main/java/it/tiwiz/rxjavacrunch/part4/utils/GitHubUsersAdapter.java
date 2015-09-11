@@ -15,7 +15,6 @@ import java.util.List;
 import it.tiwiz.rxjavacrunch.R;
 import it.tiwiz.rxjavacrunch.part4.model.GitHubUser;
 
-
 public class GitHubUsersAdapter extends RecyclerView.Adapter<GitHubUsersAdapter.DataHolder> {
 
     private List<GitHubUser> users = new ArrayList<>();

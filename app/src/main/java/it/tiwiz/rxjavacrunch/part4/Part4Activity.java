@@ -13,7 +13,6 @@ import it.tiwiz.rxjavacrunch.part4.utils.OnRVItemClickListener;
 public class Part4Activity extends AppCompatActivity implements OnRVItemClickListener{
 
     private final static String TAG = "RxAndroidCrunch";
-    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +21,7 @@ public class Part4Activity extends AppCompatActivity implements OnRVItemClickLis
 
         GitHubUsersAdapter adapter = new GitHubUsersAdapter(this);
         GitHubWrapper.getUsersInto(adapter);
-        recyclerView = (RecyclerView) findViewById(R.id.usersList);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.usersList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);

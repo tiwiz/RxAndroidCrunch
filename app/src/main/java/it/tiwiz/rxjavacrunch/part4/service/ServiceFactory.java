@@ -2,9 +2,6 @@ package it.tiwiz.rxjavacrunch.part4.service;
 
 import retrofit.RestAdapter;
 
-/**
- *
- */
 public class ServiceFactory {
 
     public static <T> T createServiceFrom(final Class<T> serviceClass, String endpoint) {
