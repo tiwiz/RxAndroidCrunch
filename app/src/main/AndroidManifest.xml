@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="it.tiwiz.rxjavacrunch" >
+    package="it.tiwiz.rxjavacrunch">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -8,10 +8,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,24 +20,51 @@
         </activity>
         <activity
             android:name=".part1.Part1Activity"
-            android:label="@string/title_activity_part1" />
+            android:label="@string/title_activity_part1"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.tiwiz.rxjavacrunch.MainActivity" />
+        </activity>
         <activity
             android:name=".part2.Part2Activity"
-            android:label="@string/title_activity_part2" />
+            android:label="@string/title_activity_part2"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.tiwiz.rxjavacrunch.MainActivity" />
+        </activity>
         <activity
             android:name=".part3.Part3Activity"
-            android:label="@string/title_activity_part3" />
+            android:label="@string/title_activity_part3"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.tiwiz.rxjavacrunch.MainActivity" />
+        </activity>
         <activity
             android:name=".part4.Part4Activity"
-            android:label="@string/title_activity_main4" >
+            android:label="@string/title_activity_main4"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.tiwiz.rxjavacrunch.MainActivity" />
         </activity>
         <activity
             android:name=".part4.Part4DetailActivity"
             android:label="@string/title_activity_part4_detail"
-            android:parentActivityName=".part4.Part4Activity" >
+            android:parentActivityName=".part4.Part4Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it.tiwiz.rxjavacrunch.part4.Part4Activity" />
+        </activity>
+        <activity
+            android:name=".part5.Part5Activity"
+            android:label="@string/title_activity_part5"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.tiwiz.rxjavacrunch.MainActivity" />
         </activity>
     </application>
 

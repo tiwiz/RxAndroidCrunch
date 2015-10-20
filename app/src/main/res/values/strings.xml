@@ -1,11 +1,9 @@
 <resources>
-    <string name="app_name">RxJava Crunch</string>
-
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_part1">Part1Activity</string>
-    <string name="title_activity_part2">Part2Activity</string>
-    <string name="title_activity_part3">Part3Activity</string>
-    <string name="title_activity_main4">Retrofit test</string>
-    <string name="title_activity_part4_detail">Part4DetailActivity</string>
+    <string name="app_name">Crunching RxAndroid</string>
+    <string name="title_activity_part1">Crunching RxAndroid - Part 1</string>
+    <string name="title_activity_part2">Crunching RxAndroid - Part 2</string>
+    <string name="title_activity_part3">Crunching RxAndroid - Part 3</string>
+    <string name="title_activity_main4">Crunching RxAndroid - Retrofit</string>
+    <string name="title_activity_part4_detail">Crunching RxAndroid - Retrofit Detail</string>
+    <string name="title_activity_part5">Crunching RxAndroid - RxLifecycle</string>
 </resources>
