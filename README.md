@@ -7,4 +7,6 @@ article.
 * Base project - [Download](https://github.com/tiwiz/RxAndroidCrunch/releases/tag/BaseProject)
 * Part 1 - [Download](https://github.com/tiwiz/RxAndroidCrunch/releases/tag/Part1)
 * Part 2 - [Download](https://github.com/tiwiz/RxAndroidCrunch/releases/tag/Part2)
+* Part 3 - [Download](https://github.com/tiwiz/RxAndroidCrunch/releases/tag/Part3)
+* Part 4 - [Download](https://github.com/tiwiz/RxAndroidCrunch/releases/tag/Part4)
 
