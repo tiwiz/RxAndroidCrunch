@@ -1,12 +1,8 @@
 package it.tiwiz.rxjavacrunch.part5;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
 import java.util.concurrent.TimeUnit;
@@ -14,12 +10,12 @@ import java.util.concurrent.TimeUnit;
 import it.tiwiz.rxjavacrunch.R;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
+import rx.functions.Action0;
 
 public class Part5Activity extends AppCompatActivity{
 
     private TextView textEmittedNumber;
-    private static final String TAG = "RxAndroidCrunch";
+    private static final String TAG = "NightObserver";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,19 +31,28 @@ public class Part5Activity extends AppCompatActivity{
 
 
     private void startEmitting() {
+        Log.d(TAG, "Night gathers, and now my watch begins");
         Observable.interval(1, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(this::logTiming);
+                .subscribe(this::logOnNext, this::logOnError, this::logOnCompleted);
     }
 
-    private void logTiming(Long time) {
+    private void logOnNext(Long time) {
         textEmittedNumber.setText(String.valueOf(time));
-        Log.d(TAG, "Currently emitted number: " + time);
+        Log.d(TAG, "Nothing bad happened for " + time + " seconds");
+    }
+
+    private void logOnError(Throwable throwable) {
+        Log.e(TAG, "Something worse than White Walkers is approaching!\t" + throwable.getMessage());
+    }
+
+    private void logOnCompleted() {
+        Log.d(TAG, "The day has come, may my watch end!");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG, "onPause");
+        Log.w(TAG, "The sun is rising!");
     }
 }
