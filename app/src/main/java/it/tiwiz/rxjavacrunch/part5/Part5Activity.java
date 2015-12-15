@@ -36,6 +36,7 @@ public class Part5Activity extends RxAppCompatActivity {
         Log.d(TAG, "Night gathers, and now my watch begins");
         Observable.interval(1, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
+                .compose(bindToLifecycle())
                 .subscribe(this::logOnNext, this::logOnError, this::logOnCompleted);
     }
 
