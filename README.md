@@ -9,4 +9,5 @@ article.
 * Part 2 - [Download](https://github.com/tiwiz/RxAndroidCrunch/releases/tag/Part2)
 * Part 3 - [Download](https://github.com/tiwiz/RxAndroidCrunch/releases/tag/Part3)
 * Part 4 - [Download](https://github.com/tiwiz/RxAndroidCrunch/releases/tag/Part4)
+* Part 5 - [Start](https://github.com/tiwiz/RxAndroidCrunch/releases/tag/The-watch-begins) - [End](https://github.com/tiwiz/RxAndroidCrunch/releases/tag/The-watch-ends)
 
