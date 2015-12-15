@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
+
 import java.util.concurrent.TimeUnit;
 
 import it.tiwiz.rxjavacrunch.R;
@@ -12,7 +14,7 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action0;
 
-public class Part5Activity extends AppCompatActivity{
+public class Part5Activity extends RxAppCompatActivity {
 
     private TextView textEmittedNumber;
     private static final String TAG = "NightObserver";
