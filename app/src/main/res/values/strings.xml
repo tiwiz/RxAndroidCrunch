@@ -6,4 +6,5 @@
     <string name="title_activity_main4">Crunching RxAndroid - Retrofit</string>
     <string name="title_activity_part4_detail">Crunching RxAndroid - Retrofit Detail</string>
     <string name="title_activity_part5">Crunching RxAndroid - RxLifecycle</string>
+    <string name="title_activity_part6">Part6Activity</string>
 </resources>
