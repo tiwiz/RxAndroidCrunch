@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -12,8 +13,13 @@ import android.widget.TextView;
 
 import com.jakewharton.rxbinding.widget.RxTextView;
 
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
 import it.tiwiz.rxjavacrunch.R;
+import rx.Observable;
 import rx.functions.Action1;
+import rx.functions.Func1;
 
 public class Part7Activity extends AppCompatActivity {
 
@@ -47,6 +53,13 @@ public class Part7Activity extends AppCompatActivity {
     }
 
     public void onCalculationRequest(View view) {
+        Observable.just(txtNumber.getText())
+                .delay(5, TimeUnit.SECONDS)
+                .map(editable -> Integer.parseInt(editable.toString()))
+                .lift(new SequenceOperator())
+                .map(sqrt -> String.format(Locale.getDefault(), "SQRT is %d", sqrt))
+                .compose(new ObservableTransformer<>())
+                .subscribe(s -> txtResponse.setText(s), throwable -> txtResponse.setText(throwable.getMessage()));
 
     }
 
