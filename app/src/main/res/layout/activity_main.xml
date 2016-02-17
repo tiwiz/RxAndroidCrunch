@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,6 +7,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <Button
@@ -17,31 +18,31 @@
     <Button
         style="@style/RxButton"
         android:id="@+id/btnPart2"
-        android:text="Part 2"
-        android:layout_below="@id/btnPart1"/>
+        android:text="Part 2"/>
 
     <Button
         style="@style/RxButton"
         android:id="@+id/btnPart3"
-        android:text="Part 3"
-        android:layout_below="@id/btnPart2"/>
+        android:text="Part 3"/>
 
     <Button
         style="@style/RxButton"
         android:id="@+id/btnPart4"
-        android:text="Part 4"
-        android:layout_below="@id/btnPart3"/>
+        android:text="Part 4"/>
 
     <Button
         style="@style/RxButton"
         android:id="@+id/btnPart5"
-        android:text="Part 5"
-        android:layout_below="@id/btnPart4"/>
+        android:text="Part 5"/>
 
     <Button
         style="@style/RxButton"
         android:id="@+id/btnPart6"
-        android:text="Part 6"
-        android:layout_below="@id/btnPart5"/>
+        android:text="Part 6"/>
 
-</RelativeLayout>
+    <Button
+        style="@style/RxButton"
+        android:id="@+id/btnPart7"
+        android:text="Part 7"/>
+
+</LinearLayout>

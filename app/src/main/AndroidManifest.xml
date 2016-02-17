@@ -75,6 +75,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it.tiwiz.rxjavacrunch.MainActivity" />
         </activity>
+        <activity
+            android:name=".part7.Part7Activity"
+            android:label="@string/title_activity_part7"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.tiwiz.rxjavacrunch.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
