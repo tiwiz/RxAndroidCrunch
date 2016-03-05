@@ -10,10 +10,12 @@ import android.support.v4.app.FragmentManager;
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
+import rx.subjects.AsyncSubject;
 import rx.subjects.PublishSubject;
 import rx.subjects.Subject;
 import rx.subscriptions.CompositeSubscription;
 
+import static it.tiwiz.rxjavacrunch.part8.OnObservableRetrievedListener.*;
 import static it.tiwiz.rxjavacrunch.part8.OnObservableRetrievedListener.PUBLISH;
 
 public class Part8WorkerFragment extends Fragment{
@@ -21,6 +23,7 @@ public class Part8WorkerFragment extends Fragment{
     private OnObservableRetrievedListener listener;
 
     private Subject<Integer, Integer> publishSubject = PublishSubject.create();
+    private Subject<Integer, Integer> asyncSubject = AsyncSubject.create();
     private CompositeSubscription subscriptions = new CompositeSubscription();
 
     private static final String TAG = "WorkerFragment";
@@ -45,6 +48,7 @@ public class Part8WorkerFragment extends Fragment{
                 .take(40);
 
         subscriptions.add(source.subscribe(publishSubject));
+        subscriptions.add(source.subscribe(asyncSubject));
     }
 
     @Override
@@ -64,6 +68,7 @@ public class Part8WorkerFragment extends Fragment{
     public void onResume() {
         super.onResume();
         listener.onObservableRetrieved(publishSubject.asObservable(), PUBLISH);
+        listener.onObservableRetrieved(asyncSubject.asObservable(), ASYNC);
     }
 
     @Override

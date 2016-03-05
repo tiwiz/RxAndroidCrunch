@@ -7,8 +7,9 @@ import rx.Observable;
 
 public interface OnObservableRetrievedListener {
     String PUBLISH = "PublishSubject";
+    String ASYNC = "AsyncSubject";
 
-    @StringDef({PUBLISH})
+    @StringDef({PUBLISH, ASYNC})
     @interface Subjects{}
 
     void onObservableRetrieved(@NonNull Observable<Integer> observable, @Subjects String type);
