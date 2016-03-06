@@ -3,6 +3,8 @@ package it.tiwiz.rxjavacrunch.part8;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 
+import java.util.List;
+
 import static it.tiwiz.rxjavacrunch.R.drawable.ic_async;
 import static it.tiwiz.rxjavacrunch.R.drawable.ic_behavior;
 import static it.tiwiz.rxjavacrunch.R.drawable.ic_publish;
@@ -38,6 +40,16 @@ public class LogItem {
 
     public int getDrawable() {
         return drawable;
+    }
+
+    public boolean matches(List<Integer> ids) {
+        for (int id : ids) {
+            if (this.id == id){
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public static LogItem from(@NonNull String message, @Type final String type) {

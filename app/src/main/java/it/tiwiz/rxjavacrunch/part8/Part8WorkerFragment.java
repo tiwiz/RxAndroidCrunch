@@ -46,7 +46,7 @@ public class Part8WorkerFragment extends Fragment{
 
         Observable<Integer> source = Observable.interval(1, TimeUnit.SECONDS)
                 .map(Long::intValue)
-                .take(40);
+                .take(20);
 
         subscriptions.add(source.subscribe(publishSubject));
         subscriptions.add(source.subscribe(asyncSubject));
