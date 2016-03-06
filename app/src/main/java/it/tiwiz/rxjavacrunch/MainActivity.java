@@ -15,6 +15,7 @@ import it.tiwiz.rxjavacrunch.part4.Part4Activity;
 import it.tiwiz.rxjavacrunch.part5.Part5Activity;
 import it.tiwiz.rxjavacrunch.part6.Part6Activity;
 import it.tiwiz.rxjavacrunch.part7.Part7Activity;
+import it.tiwiz.rxjavacrunch.part8.Part8Activity;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setTapListener(R.id.btnPart5);
         setTapListener(R.id.btnPart6);
         setTapListener(R.id.btnPart7);
+        setTapListener(R.id.btnPart8);
     }
 
     private void setTapListener(int viewId) {
@@ -70,6 +72,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnPart7:
                 launchIntent = new Intent(this, Part7Activity.class);
+                break;
+            case R.id.btnPart8:
+                launchIntent = new Intent(this, Part8Activity.class);
                 break;
         }
 

@@ -84,6 +84,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it.tiwiz.rxjavacrunch.MainActivity" />
         </activity>
+        <activity android:name=".part8.Part8Activity"></activity>
     </application>
 
 </manifest>
