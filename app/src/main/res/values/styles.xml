@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="RxButton" parent="Base.TextAppearance.AppCompat.Button">
+    <style name="RxButton" parent="Widget.AppCompat.Button.Colored">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">48dp</item>
     </style>
@@ -18,4 +18,14 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    
+    <style name="Part8CheckBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:checked">true</item>
+    </style>
+
 </resources>

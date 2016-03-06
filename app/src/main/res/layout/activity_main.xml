@@ -45,4 +45,9 @@
         android:id="@+id/btnPart7"
         android:text="Part 7"/>
 
+    <Button
+        style="@style/RxButton"
+        android:id="@+id/btnPart8"
+        android:text="Part 8"/>
+
 </LinearLayout>
