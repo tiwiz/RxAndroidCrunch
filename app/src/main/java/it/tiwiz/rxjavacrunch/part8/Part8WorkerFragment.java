@@ -17,11 +17,6 @@ import rx.subjects.ReplaySubject;
 import rx.subjects.Subject;
 import rx.subscriptions.CompositeSubscription;
 
-import static it.tiwiz.rxjavacrunch.part8.OnObservableRetrievedListener.ASYNC;
-import static it.tiwiz.rxjavacrunch.part8.OnObservableRetrievedListener.BEHAVIOR;
-import static it.tiwiz.rxjavacrunch.part8.OnObservableRetrievedListener.PUBLISH;
-import static it.tiwiz.rxjavacrunch.part8.OnObservableRetrievedListener.REPLAY;
-
 public class Part8WorkerFragment extends Fragment{
 
     private OnObservableRetrievedListener listener;
@@ -75,10 +70,10 @@ public class Part8WorkerFragment extends Fragment{
     @Override
     public void onResume() {
         super.onResume();
-        listener.onObservableRetrieved(publishSubject.asObservable(), PUBLISH);
-        listener.onObservableRetrieved(asyncSubject.asObservable(), ASYNC);
-        listener.onObservableRetrieved(replaySubject.asObservable(), REPLAY);
-        listener.onObservableRetrieved(replaySubject.asObservable(), BEHAVIOR);
+        listener.onObservableRetrieved(publishSubject.asObservable(), Subjects.PUBLISH);
+        listener.onObservableRetrieved(asyncSubject.asObservable(), Subjects.ASYNC);
+        listener.onObservableRetrieved(replaySubject.asObservable(), Subjects.REPLAY);
+        listener.onObservableRetrieved(replaySubject.asObservable(), Subjects.BEHAVIOR);
     }
 
     @Override
