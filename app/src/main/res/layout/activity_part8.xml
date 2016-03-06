@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="it.tiwiz.rxjavacrunch.part8.Part8Activity">
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <CheckBox
+            android:id="@+id/publishCB"
+            android:text="Publish"
+            style="@style/Part8CheckBox"/>
+
+        <CheckBox
+            android:id="@+id/asyncCB"
+            android:text="Async"
+            style="@style/Part8CheckBox"/>
+
+        <CheckBox
+            android:id="@+id/replayCB"
+            android:text="Replay"
+            style="@style/Part8CheckBox"/>
+
+        <CheckBox
+            android:id="@+id/behviorCB"
+            android:text="Behavior"
+            style="@style/Part8CheckBox"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/logRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

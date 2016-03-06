@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.RecyclerView;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,8 +17,10 @@ import rx.subjects.ReplaySubject;
 import rx.subjects.Subject;
 import rx.subscriptions.CompositeSubscription;
 
-import static it.tiwiz.rxjavacrunch.part8.OnObservableRetrievedListener.*;
+import static it.tiwiz.rxjavacrunch.part8.OnObservableRetrievedListener.ASYNC;
+import static it.tiwiz.rxjavacrunch.part8.OnObservableRetrievedListener.BEHAVIOR;
 import static it.tiwiz.rxjavacrunch.part8.OnObservableRetrievedListener.PUBLISH;
+import static it.tiwiz.rxjavacrunch.part8.OnObservableRetrievedListener.REPLAY;
 
 public class Part8WorkerFragment extends Fragment{
 
