@@ -21,7 +21,8 @@ public class Part8Activity extends AppCompatActivity implements OnObservableRetr
 
     @Override
     public void onObservableRetrieved(@NonNull Observable<Integer> observable, @Subjects String type) {
-        subscriptions.add(observable.doOnSubscribe(LoggerAction.from(type))
+        subscriptions.add(observable.doOnSubscribe(Logger.doOnSubscribe(type))
+                .doOnUnsubscribe(Logger.doOnUnsubscribe(type))
                 .subscribe(LoggerObserver.from(type)));
     }
 

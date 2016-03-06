@@ -6,12 +6,15 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.widget.RecyclerView;
 
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 import rx.subjects.AsyncSubject;
+import rx.subjects.BehaviorSubject;
 import rx.subjects.PublishSubject;
+import rx.subjects.ReplaySubject;
 import rx.subjects.Subject;
 import rx.subscriptions.CompositeSubscription;
 
@@ -24,6 +27,8 @@ public class Part8WorkerFragment extends Fragment{
 
     private Subject<Integer, Integer> publishSubject = PublishSubject.create();
     private Subject<Integer, Integer> asyncSubject = AsyncSubject.create();
+    private Subject<Integer, Integer> replaySubject = ReplaySubject.create();
+    private Subject<Integer, Integer> behaviorSubject = BehaviorSubject.create();
     private CompositeSubscription subscriptions = new CompositeSubscription();
 
     private static final String TAG = "WorkerFragment";
@@ -49,6 +54,8 @@ public class Part8WorkerFragment extends Fragment{
 
         subscriptions.add(source.subscribe(publishSubject));
         subscriptions.add(source.subscribe(asyncSubject));
+        subscriptions.add(source.subscribe(replaySubject));
+        subscriptions.add(source.subscribe(behaviorSubject));
     }
 
     @Override
@@ -69,6 +76,8 @@ public class Part8WorkerFragment extends Fragment{
         super.onResume();
         listener.onObservableRetrieved(publishSubject.asObservable(), PUBLISH);
         listener.onObservableRetrieved(asyncSubject.asObservable(), ASYNC);
+        listener.onObservableRetrieved(replaySubject.asObservable(), REPLAY);
+        listener.onObservableRetrieved(replaySubject.asObservable(), BEHAVIOR);
     }
 
     @Override
