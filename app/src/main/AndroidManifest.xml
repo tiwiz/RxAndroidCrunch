@@ -84,7 +84,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it.tiwiz.rxjavacrunch.MainActivity" />
         </activity>
-        <activity android:name=".part8.Part8Activity"></activity>
+        <activity
+            android:name=".part8.Part8Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.tiwiz.rxjavacrunch.MainActivity" />
+        </activity>
+        <activity
+            android:name=".part9.Part9Activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.tiwiz.rxjavacrunch.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
