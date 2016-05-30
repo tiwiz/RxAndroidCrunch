@@ -103,6 +103,12 @@ public class Part9Activity extends AppCompatActivity {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unsubscribe();
+    }
+
+    @Override
     public Object onRetainCustomNonConfigurationInstance() {
         return observable;
     }
